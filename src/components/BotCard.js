@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 const botTypeClasses = {
   Assault: "icon military",
@@ -9,9 +10,10 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({ bot, handleRetireBot }) {
-  console.log(bot)
+function BotCard({ bot, handleRetireBot, onBotEnlist}) {
+  console.log(handleRetireBot)
 
+ 
   const handleDeleteBot = () => {
     if(window.confirm("COnfirm Delete Bot")){
       fetch(`http://localhost:8002/bots/${bot.id}`,{
@@ -25,13 +27,27 @@ function BotCard({ bot, handleRetireBot }) {
       })
     }
   }
+
+  function handleBotEnlisting(){
+    console.log(bot)
+    if(handleRetireBot === "no function"){
+      onBotEnlist(bot)
+    }
+    else{
+      handleRetireBot(bot)
+    }
+    
+  
+  }
+
+
   
   return (
     <div className="ui column">
       <div
         className="ui card"
         key={bot.id}
-        onClick={()=>handleRetireBot({bot})}
+        onClick={handleBotEnlisting} 
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />

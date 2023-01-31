@@ -5,13 +5,13 @@ import BotCard from "./BotCard";
 function BotCollection({allBots, onBotEnlisted}) {
   // Your code here
 
-  function handleEnlistBot(botId){
-    onBotEnlisted(botId)
+  function handleEnlistBot(bot){
+    onBotEnlisted(bot)
   }
 
   const showBots = allBots.map((elem, ind)=>{
     return(
-     <BotSpecs bot={elem} key={ind} onBotEnlist={handleEnlistBot}/>
+     <BotCard bot={elem} key={ind} onBotEnlist={handleEnlistBot} handleRetireBot={"no function"}/>
     )
   })
   

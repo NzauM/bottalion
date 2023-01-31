@@ -10,11 +10,7 @@ function YourBotArmy({chosenBots, onBotRemoved}) {
   
 
   if(chosenBots.length > 0){
-    console.log("Indaaa")
-    listChosenBots = chosenBots.map((elem, ind, arr)=>{
-      console.log(elem)
-      console.log(ind)
-      console.log(arr)
+    listChosenBots = chosenBots.map((elem, ind)=>{
       return(
         <BotCard bot={elem[0]} key={ind} handleRetireBot={handleRemoveBot}></BotCard>
       )
@@ -24,12 +20,6 @@ function YourBotArmy({chosenBots, onBotRemoved}) {
   function handleRemoveBot(bot){
     console.log(bot)
     onBotRemoved(bot)
-    // let newBots = listedBots.filter((elem)=>{
-    //   return(
-    //     elem.id !== bot.id
-    //   )
-    // })
-    // setListedBots(newBots)
   }
 
   return (

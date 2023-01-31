@@ -15,12 +15,11 @@ function BotsPage() {
   },[])
 
 
-  function handleBotEnlistArmy(botId){
-    console.log("Tushapata" + botId)
+  function handleBotEnlistArmy(bot){
+    console.log(bot)
     const listedbot = bots.filter((elem)=>{
-      // console.log(elem)
       return(
-        elem.id == botId 
+        elem.id == bot.id
       )
     })
     console.log(listedbot)
@@ -29,9 +28,7 @@ function BotsPage() {
 
   
 
-  function handleUnlistBot({bot}){
-    // console.log(bot.id)
-    // console.log(enlistedBots);
+  function handleUnlistBot(bot){
     const newlistedbots = enlistedBots.filter((elem)=>{
       console.log(elem)
       return(

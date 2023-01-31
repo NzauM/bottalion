@@ -10,11 +10,6 @@ const botTypeClasses = {
 };
 
 function BotSpecs({ bot, onBotEnlist }) {
-  function handleAddToArmy(e){
-    let myBot = e.target.value
-    console.log("clicked on bot" + myBot)
-    onBotEnlist(e.target.value)
-  }
   return (
     <div className="ui segment">
       <div className="ui two column centered grid">
@@ -66,7 +61,7 @@ function BotSpecs({ bot, onBotEnlist }) {
             <button
               className="ui button fluid"
               value={bot.id}
-              onClick={handleAddToArmy}
+              onClick={()=>console.log("add function")}
             >
               Enlist
             </button>
